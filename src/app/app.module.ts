@@ -1,3 +1,4 @@
+import { ParentModule } from './parent/parent.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -12,7 +13,8 @@ import { HighLightDirective } from './highlight.directive';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ParentModule
   ],
   providers: [],
   bootstrap: [AppComponent]
