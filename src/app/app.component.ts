@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `<span #el>I am manoj.</span> <span>I am a web developer.</span>`,
+  styles: [`[highlight]{background-color: green;color: white}`]
 })
-export class AppComponent {
-  title = 'dom-manipulate-labs';
+export class AppComponent implements AfterViewInit {
+  
+  @ViewChild('el') span: ElementRef
+
+  ngAfterViewInit(): void {
+    this.span.nativeElement.setAttribute('highlight', '');
+
+  }
+
 }
